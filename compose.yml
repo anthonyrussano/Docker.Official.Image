@@ -5,6 +5,10 @@ volumes:
 services:
   rocketchat:
     image: registry.rocket.chat/rocketchat/rocket.chat:${RELEASE:-latest}
+    deploy:
+      placement:
+        constraints:
+          - "node.hostname==doeg"
     restart: always
     labels:
       traefik.enable: "true"
@@ -33,6 +37,10 @@ services:
 
   mongodb:
     image: docker.io/bitnami/mongodb:${MONGODB_VERSION:-5.0}
+    deploy:
+      placement:
+        constraints:
+          - "node.hostname==doeg"
     restart: always
     volumes:
       - mongodb_data:/bitnami/mongodb
