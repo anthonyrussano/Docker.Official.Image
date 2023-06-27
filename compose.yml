@@ -6,7 +6,7 @@ services:
     deploy:
       placement:
         constraints:
-          - "node.hostname==doeg"
+          - "node.hostname==dodo"
     restart: always
     labels:
       traefik.enable: "true"
@@ -38,7 +38,7 @@ services:
     deploy:
       placement:
         constraints:
-          - "node.hostname==doeg"
+          - "node.hostname==dodo"
     restart: always
     volumes:
       - rocket_data:/bitnami/mongodb
